@@ -1,0 +1,34 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media screen and (min-width:360px) { 
+  /*　画面サイズが480pxからはここを読み込む　*/
+  input{
+    width:100% !important;
+  }
+  .blank{
+    margin-top:0.5vh;
+  }
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+  /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+  .blank{
+    margin-top:1.5vh;
+  }
+}
+@media screen and (min-width:1024px) {
+  /*　画面サイズが1024pxからはここを読み込む　*/
+  input{
+    width:90% !important;
+  }
+
+  .btn{
+    margin: 2vw;
+  }
+
+  .blank{
+    margin-top:2vh;
+  }
+  
+}

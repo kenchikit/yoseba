@@ -1,0 +1,133 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+ body ul {
+   margin:0;
+   padding:0;
+ }
+
+
+ .bs-component + .bs-component {
+   margin-top: 1rem;
+ }
+
+ a,a:hover {
+   text-decoration: none;
+   color: black;
+ }
+
+ .breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li {
+  display: inline;/*横に並ぶように*/
+  list-style: none;
+  font-weight: bold;/*太字*/
+}
+
+.breadcrumb li:after {
+  /* >を表示*/
+  content: '>';
+  padding: 0 0.2em;
+  color: #555;
+}
+
+.breadcrumb li:last-child:after {
+  content: '';
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: gray;
+}
+
+.breadcrumb li:first-child a:before {
+  /*家アイコン*/
+  font-family: FontAwesome;
+  content: '\f015';
+  font-weight: normal;
+  font-size: 1.1em;
+  color: #2e7fea;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width:360px) { 
+  /*　画面サイズが480pxからはここを読み込む　*/
+  .content{
+    margin: 0 6vw;
+  }
+  .navbar{
+    padding:1vh 8vw;
+  }
+  .card_margin{
+    margin:0 0.5vw;
+  }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+  /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+  .content{
+    margin: 0 6vw;
+  }
+
+  /* bootstrap default */
+  .bs-docs-section {
+    margin-top: 8em;
+  }
+  .bs-component {
+    position: relative;
+  }
+  .bs-component .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+  }
+  .bs-component .modal-dialog {
+    width: 90%;
+  }
+  .bs-component .popover {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    margin: 20px;
+  }
+  .nav-tabs {
+    margin-bottom: 15px;
+  }
+  .progress {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width:1024px) {
+  /*　画面サイズが1024pxからはここを読み込む　*/
+  .content{
+    margin: 0 10vw;
+  }
+  .navbar{
+    padding:2vh 8vw;
+  }
+  .card_margin{
+    margin:0 0.1vw;
+  }
+}

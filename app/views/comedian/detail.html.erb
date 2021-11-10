@@ -1,0 +1,89 @@
+<%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'detail', media: 'all', 'data-turbolinks-track': 'reload' %>
+<script type="text/javascript">LineIt.loadButton();</script>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="bs-component">
+      <h4><%= @comedian.name %></h4>
+      <div class="bs-component">
+        <blockquote class="blockquote">
+          <p class="mb-0" style="font-size:14.5px;"><%= @comedian.content %></p>
+          <footer class="blockquote-footer">出典<cite title="Source Title"> - Wikipedia</cite></footer>
+        </blockquote>
+      </div>
+      <h5>DVD情報</h5>
+      <div>準備中</div>
+      <h5>各種リンク</h5>
+      <a href="">公式サイト<i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="sp-mrg"></div>
+    <div class="bs-component">
+      <div class="card mb-3">
+        <h3 class="card-header">YouTube</h3>
+        <%# <div class="card-body"> %>
+          <%# <h5 class="card-title">Special title treatment</h5> %>
+          <%# <h6 class="card-subtitle text-muted">Support card subtitle</h6> %>
+        <%# </div> %>
+        <div class="embed-responsive embed-responsive-16by9">
+          <% if @comedian.youtube %>
+            <iframe class="embed-responsive-item" src=<%= "https://www.youtube.com/embed/#{@comedian.youtube}" %> frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+         <% end %>
+        </div>
+        <%# <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div> %>
+        <%# <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul> %>
+        <%# <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div> %>
+        <%# <div class="card-footer text-muted">
+          2 days ago
+        </div> %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="bs-component">
+      <h5>シェア</h5>
+      <div class="row bs-component">
+        <a href="<%= "https://twitter.com/share?url=#{request.url}&text=#{@comedian.name}をチェック！&via=yoseba_net" %>" class="btn-social-square btn-social-square--twitter" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <div class="line-it-button" data-lang="ja" data-type="share-b" data-ver="3" data-url="<%= request.url %>" data-color="default" data-size="large" data-count="false" style="display: none;">
+        </div>
+        <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="bs-component">
+      <h5>タグ</h5>
+      <div class="bs-component">
+        <ul class="cp_tag01">
+          <% @tagname.each do |tname| %>
+            <li><%= link_to(tname.name, "/tag/#{tname.name}") %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:20px;"></div>
+<div class="row col-lg-12">
+  <p class="bs-component">
+    <a href='/'>
+      <button type="button" class="btn btn-secondary">もどる</button>
+    </a>
+  </p>
+</div>

@@ -1,0 +1,53 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-body{
+  padding:1rem;
+}
+.btn-flat-simple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: black;
+  background: #ECECEC;
+  width:100%;
+}
+
+@media screen and (min-width:360px) { 
+  /*　画面サイズが480pxからはここを読み込む　*/
+  .clearfix:after {
+    content: "";
+    display: block;
+    clear: both;	
+  }
+  .card{
+    padding:0;
+  }
+  .inner {     
+    float: right; /*右側に配置する*/
+    width: 50%;
+  }
+  .card-title{
+    font-size: 16px;
+  }
+  .o_name{
+    font-size: 13px;
+  }
+  .inner img{
+    float:left; /*左側に配置する*/
+    width:90%;
+    height:auto;
+  }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+  /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+  .card {
+    max-width: 50%;
+  }
+}
+@media screen and (min-width:1024px) {
+  /*　画面サイズが1024pxからはここを読み込む　*/
+}

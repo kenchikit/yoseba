@@ -1,0 +1,108 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+h5{
+  margin-top: 20px;
+}
+
+//見出し
+h4,h5{
+	//border-bottom: solid 3px #cce4ff;
+	border-bottom: solid 3px #ccffcc;
+  position: relative;
+}
+
+h4:after,h5:after {
+  position: absolute;
+  content: " ";
+  display: block;
+	// border-bottom: solid 3px #5472cd;
+	border-bottom: solid 3px #69b076;
+  bottom: -3px;
+  width: 20%;
+}
+
+// タグ
+.cp_tag01 {
+	list-style: none;
+  overflow: hidden;
+}
+.cp_tag01 li {
+	display: inline-block;
+}
+.cp_tag01 a {
+	line-height: 26px;
+	position: relative;
+	display: inline-block;
+	height: 26px;
+	margin: 0 10px 10px 0;
+	padding: 0 20px 0 23px;
+	-webkit-transition: color 0.2s;
+	        transition: color 0.2s;
+	text-decoration: none;
+	// color: #455a64;
+	border-radius: 3px 0 0 3px;
+	background: #cfd8dc;
+}
+.cp_tag01 a::before, .cp_tag01 a::after {
+	background: #fafcfc;/*背景色*/
+}
+.cp_tag01 a::before {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 6px;
+	height: 6px;
+	content: '';
+	border-radius: 10px;
+}
+.cp_tag01 a::after {
+	position: absolute;
+	top: -2px;
+	right: -6px;
+	width: 0;
+	height: 0;
+	content: '';
+	border-width: 15px 0 15px 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent #cfd8dc;
+	border-radius: 4px;
+}
+
+// シェアボタン
+.btn-social-square {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  margin: 0 4vw;
+  height: 45px;
+  line-height: 45px;
+  font-size: 23px;
+  color: rgba(255, 255, 255, 0.952);
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+.btn-social-square i {
+  line-height:45px;
+}
+.btn-social-square--twitter {
+  background: #1DA1F2;
+}
+
+@media screen and (min-width:360px) { 
+  /*　画面サイズが480pxからはここを読み込む　*/
+  .sp-mrg{
+    margin-top:20px;
+  }
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+  /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+}
+@media screen and (min-width:1024px) {
+  /*　画面サイズが1024pxからはここを読み込む　*/
+  .sp-mrg{
+    display: none;
+  }
+}

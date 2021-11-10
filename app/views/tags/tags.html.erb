@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'tags', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<h4>タグで検索！</h4>
+
+<div class="row col-lg-12">
+  <ul class="cp_tag01">
+    <% @tags.each do |tag| %>
+    <li><p><%= link_to(tag.name, "/tag/#{tag.name}") %></p></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="row col-lg-12">
+  <p class="bs-component">
+    <a href='/'>
+      <button type="button" class="btn btn-secondary">TOPへ</button>
+    </a>
+  </p>
+</div>
